@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
+import { withPayload } from "@payloadcms/next/withPayload";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Tell Turbopack the workspace root is THIS folder, not the parent that has another lockfile.
+  turbopack: {
+    root: __dirname,
+  },
 };
 
-export default nextConfig;
+export default withPayload(nextConfig);
