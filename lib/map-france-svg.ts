@@ -73,19 +73,26 @@ export const MAP_FRANCE_SVG: string = `<svg viewBox="0 0 480 500" xmlns="http://
   <!-- Plaques de fond derrière labels -->
   <g class="map-label-plates">
     <rect x="238.9" y="165.1" width="46.3" height="19.0" fill="#FAFAF7" opacity="0.85" rx="2"/>
-    <rect x="259.8" y="300.8" width="110.0" height="20.0" fill="#FAFAF7" opacity="0.85" rx="2"/>
-    <rect x="239.2" y="273.6" width="38.2" height="19.0" fill="#FAFAF7" opacity="0.85" rx="2"/>
-    <rect x="330.9" y="255.8" width="54.4" height="19.0" fill="#FAFAF7" opacity="0.85" rx="2"/>
+    <rect x="259.8" y="320.5" width="110.0" height="20.0" fill="#FAFAF7" opacity="0.85" rx="2"/>
+    <rect x="239.2" y="282" width="38.2" height="19.0" fill="#FAFAF7" opacity="0.85" rx="2"/>
+    <rect x="347" y="243" width="54.4" height="19.0" fill="#FAFAF7" opacity="0.85" rx="2"/>
     <rect x="165.4" y="352.1" width="126.9" height="19.0" fill="#FAFAF7" opacity="0.85" rx="2"/>
     <rect x="362.5" y="344.6" width="54.4" height="19.0" fill="#FAFAF7" opacity="0.85" rx="2"/>
+  </g>
+
+  <!-- Leader lines -->
+  <g class="map-leaders" stroke="#8B919E" stroke-width="0.5" fill="none" opacity="0.6">
+    <line x1="314.8" y1="290.7" x2="314.8" y2="320" />
+    <line x1="319.9" y1="278.9" x2="350" y2="255" />
+    <line x1="288.4" y1="283.7" x2="277" y2="293" />
   </g>
 
   <!-- Labels villes -->
   <g class="map-markers-labels">
     <text x="241.9" y="180.2" text-anchor="start" font-family="Geist, sans-serif" font-size="13" font-weight="600" letter-spacing="0.04em" fill="#0F1A2E" style="text-transform: uppercase;">Paris</text>
-    <text x="314.8" y="316.7" text-anchor="middle" font-family="Geist, sans-serif" font-size="14" font-weight="600" letter-spacing="0.04em" fill="#0F1A2E" style="text-transform: uppercase;">Chambéry &#160;<tspan font-family="Instrument Serif, serif" font-style="italic" font-weight="400" fill="#1D3A8F" font-size="14" style="text-transform: none;">siège</tspan></text>
-    <text x="274.4" y="288.7" text-anchor="end" font-family="Geist, sans-serif" font-size="13" font-weight="600" letter-spacing="0.04em" fill="#0F1A2E" style="text-transform: uppercase;">Lyon</text>
-    <text x="333.9" y="270.9" text-anchor="start" font-family="Geist, sans-serif" font-size="13" font-weight="600" letter-spacing="0.04em" fill="#0F1A2E" style="text-transform: uppercase;">Annecy</text>
+    <text x="314.8" y="336" text-anchor="middle" font-family="Geist, sans-serif" font-size="14" font-weight="600" letter-spacing="0.04em" fill="#0F1A2E" style="text-transform: uppercase;">Chambéry &#160;<tspan font-family="Instrument Serif, serif" font-style="italic" font-weight="400" fill="#1D3A8F" font-size="14" style="text-transform: none;">siège</tspan></text>
+    <text x="274.4" y="297" text-anchor="end" font-family="Geist, sans-serif" font-size="13" font-weight="600" letter-spacing="0.04em" fill="#0F1A2E" style="text-transform: uppercase;">Lyon</text>
+    <text x="350" y="258" text-anchor="start" font-family="Geist, sans-serif" font-size="13" font-weight="600" letter-spacing="0.04em" fill="#0F1A2E" style="text-transform: uppercase;">Annecy</text>
     <text x="289.3" y="367.1" text-anchor="end" font-family="Geist, sans-serif" font-size="13" font-weight="600" letter-spacing="0.04em" fill="#0F1A2E" style="text-transform: uppercase;">Aix-en-Provence</text>
     <text x="365.5" y="359.7" text-anchor="start" font-family="Geist, sans-serif" font-size="13" font-weight="600" letter-spacing="0.04em" fill="#0F1A2E" style="text-transform: uppercase;">Monaco</text>
   </g>

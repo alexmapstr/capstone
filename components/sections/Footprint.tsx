@@ -212,8 +212,8 @@ function MapWithScannerReveal() {
 
         /* France régions — main draw, staggered region by region */
         .capstone-map[data-drawing="true"] .map-region {
-          animation: capstone-draw-region 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-          animation-delay: calc(0.3s + var(--idx, 0) * 0.06s);
+          animation: capstone-draw-region 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          animation-delay: calc(0.2s + var(--idx, 0) * 0.04s);
         }
 
         /* Suisse en pointillés — comes in after a short delay */
@@ -249,10 +249,10 @@ function MapWithScannerReveal() {
         }
         .capstone-map[data-drawing="true"] .map-dot,
         .capstone-map[data-drawing="true"] text {
-          animation: capstone-fadein 0.5s ease-out 2.4s forwards;
+          animation: capstone-fadein 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s forwards;
         }
         .capstone-map[data-drawing="true"] .map-pulse {
-          animation: capstone-pulse-fadein 0.4s ease-out 2.6s forwards, capstone-mapPulse 3s ease-out 3.0s infinite;
+          animation: capstone-pulse-fadein 0.4s ease-out 1.4s forwards, capstone-mapPulse 2.5s ease-out 1.8s infinite;
         }
 
         @keyframes capstone-fadein {
