@@ -1,9 +1,10 @@
 import { Hero } from "@/components/sections/Hero";
 import { Missions } from "@/components/sections/Missions";
-import { Mandants } from "@/components/sections/Mandants";
+import { Interlocuteurs } from "@/components/sections/Interlocuteurs";
 import { Methode } from "@/components/sections/Methode";
 import { Livrables } from "@/components/sections/Livrables";
 import { Footprint } from "@/components/sections/Footprint";
+import { Apropos } from "@/components/sections/Apropos";
 import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
@@ -11,10 +12,11 @@ export default function Home() {
     <main>
       <Hero />
       <Missions />
-      <Mandants />
+      <Interlocuteurs />
       <Methode />
       <Livrables />
       <Footprint />
+      <Apropos />
       <Contact />
     </main>
   );

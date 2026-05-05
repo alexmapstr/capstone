@@ -16,7 +16,7 @@ const TYPOLOGIES = [
   "Comités d'investissement",
 ];
 
-export function Mandants() {
+export function Interlocuteurs() {
   return (
     <section
       id="industries"
@@ -38,7 +38,7 @@ export function Mandants() {
           <div className="grid grid-cols-[200px_1fr] gap-14 mb-16 items-baseline max-md:grid-cols-1 max-md:gap-3 max-md:mb-12">
             <div className="text-[12px] font-medium tracking-[0.04em] text-[var(--on-dark-muted)]">
               <strong className="font-medium text-[var(--on-dark)]">02</strong>{" "}
-              / Mandants
+              / Interlocuteurs
             </div>
             <div>
               <p className="mb-6 max-w-[50ch] text-[17px] leading-[1.55] text-[var(--on-dark-sec)]">
@@ -53,7 +53,7 @@ export function Mandants() {
                 className="text-[clamp(40px,5vw,76px)] leading-none tracking-[-0.03em] font-medium max-w-[17ch] text-[var(--on-dark)]"
                 tokens={[
                   "Nos",
-                  { text: "mandants.", className: "serif text-[var(--accent-light)]" },
+                  { text: "interlocuteurs.", className: "serif text-[var(--accent-light)]" },
                 ]}
               />
               <p className="mt-6 italic text-[16px] leading-[1.55] text-[var(--on-dark-sec)]">
