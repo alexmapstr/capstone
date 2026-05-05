@@ -21,7 +21,7 @@ export function Missions() {
             </div>
             <div>
               <p className="mb-6 max-w-[50ch] text-[17px] leading-[1.55] text-[var(--text-sec)]">
-                Six types de mandats, du diagnostic d&apos;un portefeuille à la
+                Six types d'interventions, du diagnostic d&apos;un portefeuille à la
                 contre-expertise d&apos;un dossier en comité.
               </p>
               <RevealText

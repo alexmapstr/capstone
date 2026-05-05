@@ -8,10 +8,11 @@ import { CapstoneLogoFull } from "@/components/CapstoneLogo";
 
 const NAV_LINKS = [
   { href: "/#capabilities", id: "capabilities", label: "Missions" },
-  { href: "/#industries", id: "industries", label: "Mandants" },
+  { href: "/#industries", id: "industries", label: "Interlocuteurs" },
   { href: "/#approach", id: "approach", label: "Méthode" },
   { href: "/#deliverables", id: "deliverables", label: "Livrables" },
   { href: "/#footprint", id: "footprint", label: "Implantations" },
+  { href: "/#about", id: "about", label: "À propos" },
 ];
 
 const SECTION_IDS = NAV_LINKS.map((l) => l.id);
@@ -35,7 +36,7 @@ export function Header() {
       data-scrolled={scrolled}
       className="sticky top-0 z-[100] flex items-center justify-between border-b border-[var(--line)] bg-[rgba(250,250,247,0.85)] px-14 py-[18px] backdrop-blur-[16px] transition-[padding] duration-300 data-[scrolled=true]:py-[14px] max-md:px-6 max-md:py-[14px]"
     >
-        <a
+        
           href="#"
           aria-label="Capstone Strategies — Accueil"
           className="group/logo flex items-center text-[var(--text)] transition-colors duration-200 hover:text-[var(--accent)]"
@@ -56,7 +57,7 @@ export function Header() {
         </ul>
 
         <Magnetic strength={6} radius={2}>
-          <a
+          
             href="/#contact"
             className="group/cta inline-flex items-center gap-2 border border-[var(--text)] px-[22px] py-[11px] text-[13px] font-medium text-[var(--text)] transition-colors duration-200 hover:bg-[var(--text)] hover:text-[var(--bg)]"
           >
@@ -82,7 +83,7 @@ function NavLink({
   active?: boolean;
 }) {
   return (
-    <a
+    
       href={href}
       data-active={active}
       className="group/nav relative py-1 text-[13.5px] font-medium text-[var(--text-sec)] transition-colors duration-200 hover:text-[var(--text)] data-[active=true]:text-[var(--text)]"

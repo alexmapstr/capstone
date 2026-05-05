@@ -24,8 +24,7 @@ export function Apropos() {
               <RevealText
                 className="text-[clamp(40px,5vw,76px)] leading-none tracking-[-0.03em] font-medium max-w-[17ch] text-[var(--text)]"
                 tokens={[
-                  "Notre",
-                  { text: "maison.", className: "serif text-[var(--accent)]" },
+                  { text: "à propos.", className: "serif text-[var(--accent)]" },
                 ]}
               />
             </div>
