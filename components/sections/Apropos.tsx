@@ -39,16 +39,7 @@ export function Apropos() {
                 Capstone Strategies est un cabinet de conseil indépendant en stratégie immobilière. La maison intervient en amont des décisions patrimoniales — diagnostic, arbitrage, recommandation à la gouvernance — pour le compte de foncières, family offices, holdings patrimoniales et acteurs publics.
               </p>
               <p className="text-[16px] leading-[1.7] text-[var(--text-sec)] mb-6">
-                Capstone Strategies s&apos;inscrit dans la continuité de{" "}
-                
-                  href="https://www.frerault-expertises.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-[var(--text)] underline decoration-[var(--accent)] decoration-1 underline-offset-4 transition-colors hover:text-[var(--accent)]"
-                >
-                  Frerault Expertises
-                </a>
-                , cabinet indépendant d&apos;expertise immobilière accrédité RICS et REV-TEGoVA, dont l&apos;activité couvre les segments résidentiel prime, commercial et hôtelier sur cinq implantations (Paris, Lyon, Chambéry, Annecy, Aix-en-Provence).
+                Capstone Strategies s&apos;inscrit dans la continuité de <a href="https://www.frerault-expertises.com" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--text)] underline decoration-[var(--accent)] decoration-1 underline-offset-4 transition-colors hover:text-[var(--accent)]">Frerault Expertises</a>, cabinet indépendant d&apos;expertise immobilière accrédité RICS et REV-TEGoVA, dont l&apos;activité couvre les segments résidentiel prime, commercial et hôtelier sur cinq implantations (Paris, Lyon, Chambéry, Annecy, Aix-en-Provence).
               </p>
               <p className="text-[16px] leading-[1.7] text-[var(--text-sec)]">
                 Là où l&apos;expertise réglementée produit la valeur, Capstone éclaire la décision : structuration patrimoniale, arbitrage, conseil à la transaction, contre-expertise. Le cabinet n&apos;intervient ni dans le circuit transactionnel, ni au capital d&apos;opérateurs ou de gestionnaires.
@@ -61,22 +52,10 @@ export function Apropos() {
                   Principes
                 </div>
                 <ul className="grid gap-5 list-none">
-                  <Principle
-                    title="Indépendance"
-                    body="Aucune commission, aucun rétro-honoraire, aucun lien capitalistique avec un opérateur ou un agent transactionnel."
-                  />
-                  <Principle
-                    title="Écrit"
-                    body="Chaque mission donne lieu à un livrable structuré et défendable. Le raisonnement est tracé, les hypothèses explicites."
-                  />
-                  <Principle
-                    title="Senior"
-                    body="Un binôme senior sur chaque mandat, du premier échange au dernier livrable. Pas de junior en première ligne."
-                  />
-                  <Principle
-                    title="Confidentialité"
-                    body="NDA systématique. Les missions ne sont pas référencées sans accord exprès."
-                  />
+                  <Principle title="Indépendance" body="Aucune commission, aucun rétro-honoraire, aucun lien capitalistique avec un opérateur ou un agent transactionnel." />
+                  <Principle title="Écrit" body="Chaque mission donne lieu à un livrable structuré et défendable. Le raisonnement est tracé, les hypothèses explicites." />
+                  <Principle title="Senior" body="Un binôme senior sur chaque mandat, du premier échange au dernier livrable. Pas de junior en première ligne." />
+                  <Principle title="Confidentialité" body="NDA systématique. Les missions ne sont pas référencées sans accord exprès." />
                 </ul>
               </div>
             </div>
