@@ -51,10 +51,10 @@ export function Contact() {
                     Siège
                   </h4>
                   <a
-                    href="mailto:contact@capstonestrategies.fr"
+                    href="mailto:contact@capstone-strategies.fr"
                     className="block text-[15.5px] leading-[1.55] text-[var(--on-dark)] transition-colors duration-200 hover:text-[var(--accent-light)]"
                   >
-                    contact@capstonestrategies.fr
+                    contact@capstone-strategies.fr
                   </a>
                   <a
                     href="tel:+33479000000"
