@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const c = getCas(slug);
   if (!c) return {};
-  return { title: `${c.title} — Capstone Strategies`, description: c.summary };
+  return { title: `${c.title} · Capstone Strategies`, description: c.summary };
 }
 
 export default async function CasPage({ params }: Params) {

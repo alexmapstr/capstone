@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const n = getNote(slug);
   if (!n) return {};
-  return { title: `${n.title} — Capstone Strategies`, description: n.summary };
+  return { title: `${n.title} · Capstone Strategies`, description: n.summary };
 }
 
 export default async function NotePage({ params }: Params) {

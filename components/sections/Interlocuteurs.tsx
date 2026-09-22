@@ -1,17 +1,16 @@
 import { Reveal } from "@/components/ui/Reveal";
-import { NumberTicker } from "@/components/ui/NumberTicker";
 import { RevealText } from "@/components/ui/RevealText";
 
 const TYPOLOGIES = [
   "Foncières cotées",
-  "Sociétés civiles d'épargne",
+  "SCPI",
   "Gestionnaires d'actifs",
   "Compagnies d'assurance",
   "Family offices",
   "Holdings patrimoniales",
   "Sociétés d'économie mixte",
   "Établissements publics fonciers",
-  "Métropoles & collectivités",
+  "Métropoles et collectivités",
   "Conseils d'administration",
   "Comités d'investissement",
 ];
@@ -42,12 +41,7 @@ export function Interlocuteurs() {
             </div>
             <div>
               <p className="mb-6 max-w-[50ch] text-[17px] leading-[1.55] text-[var(--on-dark-sec)]">
-                Trois familles. Mêmes exigences —{" "}
-                <strong className="font-medium text-[var(--on-dark)]">
-                  un raisonnement écrit, des chiffres tenus, une recommandation
-                  argumentée
-                </strong>
-                .
+                Trois catégories de mandants.
               </p>
               <RevealText
                 className="text-[clamp(40px,5vw,76px)] leading-none tracking-[-0.03em] font-medium max-w-[17ch] text-[var(--on-dark)]"
@@ -57,8 +51,8 @@ export function Interlocuteurs() {
                 ]}
               />
               <p className="mt-6 italic text-[16px] leading-[1.55] text-[var(--on-dark-sec)]">
-                Sur chaque mandat, un binôme senior. Du premier échange
-                jusqu&apos;au dernier livrable.
+                Sur chaque mandat, un binôme senior, du premier échange au
+                dernier livrable.
               </p>
             </div>
           </div>
@@ -71,18 +65,11 @@ export function Interlocuteurs() {
             label="Institutionnels"
             title={
               <>
-                Foncières &<br />
-                asset managers
+                Foncières et<br />
+                gestionnaires d&apos;actifs
               </>
             }
-            pitch="Foncières cotées, sociétés civiles d'épargne, gestionnaires d'actifs, compagnies d'assurance. Schémas directeurs sur portefeuilles diversifiés, plans d'arbitrage pluriannuels, lectures de marché indépendantes des opérateurs locaux ou des conseils transactionnels."
-            recent={
-              <>
-                Schéma directeur multi-typologies sur portefeuille régional de{" "}
-                <NumberTicker value={280} suffix=" M€" />, présentation au
-                conseil de surveillance.
-              </>
-            }
+            pitch="Foncières cotées, SCPI, gestionnaires d'actifs, compagnies d'assurance. Schémas directeurs sur portefeuilles diversifiés, plans d'arbitrage pluriannuels, analyses de marché indépendantes des opérateurs locaux et des conseils en transaction."
             delay={0.05}
           />
 
@@ -91,18 +78,11 @@ export function Interlocuteurs() {
             label="Patrimoine privé"
             title={
               <>
-                Family offices &<br />
+                Family offices et<br />
                 investisseurs privés
               </>
             }
-            pitch="Familles, holdings patrimoniales, single et multi family offices. Audits structurants en amont d'une transmission, recompositions de portefeuilles hérités, accompagnement d'acquisitions sensibles, structuration fiscale et juridique en lien avec les conseils habituels du mandant."
-            recent={
-              <>
-                Audit d&apos;un portefeuille hérité avant transmission,{" "}
-                <NumberTicker value={30} /> lignes, recommandations
-                d&apos;arbitrage et de restructuration.
-              </>
-            }
+            pitch="Familles, holdings patrimoniales, single et multi family offices. Audits en amont d'une transmission, recomposition de portefeuilles hérités, acquisitions sensibles, structuration menée avec les conseils habituels du mandant."
             delay={0.15}
           />
 
@@ -111,12 +91,11 @@ export function Interlocuteurs() {
             label="Acteurs publics"
             title={
               <>
-                Collectivités &<br />
+                Collectivités et<br />
                 établissements publics
               </>
             }
-            pitch="Communes, métropoles, sociétés d'économie mixte, établissements publics fonciers. Métropole et collectivités d'outre-mer. Rationalisation de patrimoines hétérogènes, schémas de cession argumentés, requalifications stratégiques, accompagnement jusqu'aux instances délibérantes."
-            recent="Schéma de cession d'actifs publics non-stratégiques, accompagnement jusqu'au vote de l'assemblée délibérante."
+            pitch="Communes, métropoles, sociétés d'économie mixte, établissements publics fonciers, en métropole et outre-mer. Rationalisation de patrimoines hétérogènes, schémas de cession, requalifications, accompagnement jusqu'aux instances délibérantes."
             delay={0.25}
           />
         </div>
@@ -138,7 +117,6 @@ type IndustryCardProps = {
   label: string;
   title: React.ReactNode;
   pitch: string;
-  recent: React.ReactNode;
   delay?: number;
 };
 
@@ -147,12 +125,11 @@ function IndustryCard({
   label,
   title,
   pitch,
-  recent,
   delay = 0,
 }: IndustryCardProps) {
   return (
     <Reveal delay={delay} duration={0.5}>
-      <article className="group/ind relative flex h-full min-h-[380px] flex-col gap-6 overflow-hidden border border-[var(--line-dark)] bg-[rgba(255,255,255,0.025)] p-10 transition-[border-color,background,transform] duration-300 hover:-translate-y-0.5 hover:border-[var(--line-dark-hi)] hover:bg-[rgba(255,255,255,0.04)] max-md:p-7">
+      <article className="group/ind relative flex h-full min-h-[300px] flex-col gap-6 overflow-hidden border border-[var(--line-dark)] bg-[rgba(255,255,255,0.025)] p-10 transition-[border-color,background,transform] duration-300 hover:-translate-y-0.5 hover:border-[var(--line-dark-hi)] hover:bg-[rgba(255,255,255,0.04)] max-md:p-7">
         {/* Shimmer line on hover */}
         <span
           aria-hidden
@@ -164,7 +141,7 @@ function IndustryCard({
         />
 
         <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.12em] text-[var(--on-dark-muted)] before:h-px before:w-6 before:bg-[rgba(176,183,196,0.3)] before:content-['']">
-          {number} — {label}
+          {number} · {label}
         </div>
 
         <h3 className="text-[26px] font-medium leading-[1.1] tracking-[-0.022em] text-[var(--on-dark)]">
@@ -174,13 +151,6 @@ function IndustryCard({
         <p className="text-[14px] leading-[1.6] text-[var(--on-dark-sec)]">
           {pitch}
         </p>
-
-        <div className="mt-auto border-t border-[var(--line-dark)] pt-5 text-[13px] italic leading-[1.5] text-[var(--on-dark-sec)]">
-          <strong className="mb-1.5 block text-[11px] font-medium not-italic uppercase tracking-[0.12em] text-[var(--on-dark)]">
-            Récent
-          </strong>
-          {recent}
-        </div>
       </article>
     </Reveal>
   );

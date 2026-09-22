@@ -70,10 +70,23 @@ Référence de registre : Eight Advisory, Lazard, Bredin Prat, cabinet boutique 
 ### À FAIRE
 
 - Phrases courtes, factuelles, qui énoncent ce qu'on est et ce qu'on fait
-- Chiffres concrets dans les exemples ("revue de 47 actifs", "écart de 12 % détecté", "négociation ramenée de 38 à 32 M€")
-- Mention "Récent —" pour ancrer l'expertise dans des cas réels anonymisés
 - Vocabulaire institutionnel mais simple : "mandants", "missions", "méthode", "implantations"
-- Délais courts pour donner l'image d'efficacité : 1 semaine cadrage, 2-4 semaines analyse, 1 semaine recommandation, mission complète en 4-6 semaines
+- Délais : 1 semaine cadrage, 2-4 semaines analyse, 1 semaine recommandation
+- Apostrophes typographiques, pas de tiret cadratin dans les textes visibles (utiliser deux points, virgule ou point médian)
+
+### Règle de véracité
+
+Aucune référence de mission, aucun chiffre d'exemple et aucun décompte ne
+figure sur le site sans mission réellement menée sous Capstone Strategies et
+sans accord du mandant. Les encarts "Récent" et les exemples chiffrés du type
+"revue de 47 actifs" ou "négociation ramenée de 38 à 32 M€" ont été retirés en
+septembre 2026 pour cette raison : ne pas les réintroduire. Un principe affiché
+sur le site engage le cabinet, y compris "aucune mission n'est citée sans accord
+exprès".
+
+Même règle pour les accréditations : RICS et REV-TEGoVA sont détenues par
+Frerault Expertises, pas par Capstone Strategies. Ne pas revendiquer de norme ou
+de référentiel au nom de Capstone.
 
 ### À ÉVITER ABSOLUMENT
 
@@ -81,6 +94,11 @@ Référence de registre : Eight Advisory, Lazard, Bredin Prat, cabinet boutique 
 - Sections "Quand nous appeler" ou similaires — ça fait grille de vente
 - Indicateurs d'argumentaire dans le hero ("100% indépendants", "0 commission") — ça crie l'argument
 - Verbiage corporate : "défendable en gouvernance", "résister à la contradiction", "patrimoines de premier plan", "opposable en gouvernance"
+- Tournures qui sonnent IA : anaphores ("Avant un arbitrage. Avant une cession."), triplets rythmés ("chiffrée, indépendante, écrite"), antithèses ("Nous ne livrons pas des rapports, nous livrons des outils"), slogans de clôture ("Sans exception.", "La condition de la décision juste.")
+- Superlatifs déguisés : "indépendance absolue", "mission signature", "livrable signature"
+- Anglicismes quand le mot français existe : operators, brokers, dashboard, web app, charts, trade-offs, "Monitoring Surveyor" comme intitulé de mission
+- Piques et formules de vendeur : "Aucun PDF figé", "Pas de pavé de 80 pages", "Plus de point d'étape PowerPoint mensuel"
+- Répéter l'indépendance à chaque section : une seule fois, dans la carte dédiée
 - Tags vulgaires en pills sous les cartes ("SIIC", "SCPI", "OPCI") — registre commercial bas de gamme
 - Étiquettes "Cas typique" — préférer "Récent"
 - Pavés de plus de 5 lignes par carte
@@ -90,15 +108,18 @@ Référence de registre : Eight Advisory, Lazard, Bredin Prat, cabinet boutique 
 
 ### Validé : exemples de phrases qui marchent
 
-Hero : "Conseil en stratégie immobilière. Avant un arbitrage. Avant une cession. Avant une acquisition. Nous produisons l'analyse qui sécurise la décision — chiffrée, indépendante, écrite."
+Hero : "Conseil en stratégie immobilière. Conseil en amont d'un arbitrage, d'une cession ou d'une acquisition. Analyse chiffrée, remise par écrit, sans intérêt à la transaction."
 
-Synthèse Missions : "Six types de mandats, du diagnostic d'un portefeuille à la contre-expertise d'un dossier en comité."
+Synthèse Missions : "Sept types d'intervention, du diagnostic d'un portefeuille au suivi de chantier pour le compte d'un prêteur."
 
-Synthèse Mandants : "Trois familles. Mêmes exigences — un raisonnement écrit, des chiffres tenus, une recommandation argumentée."
+Synthèse Interlocuteurs : "Trois catégories de mandants."
 
-Synthèse Méthode : "Quatre phases, un livrable à chaque étape. Une mission complète tient en 4 à 6 semaines."
+Synthèse Méthode : "Quatre phases, chacune close par un livrable écrit."
 
-Contact : "Parlons de la décision que vous préparez. Premier échange confidentiel, sans engagement. Nous évaluons ensemble la pertinence d'une mission, son périmètre et son calendrier."
+Contact : "Nous contacter. Premier entretien confidentiel et sans engagement, pour cerner la question, le périmètre et le calendrier."
+
+Ces formulations remplacent celles d'avant septembre 2026. Les anciennes,
+notamment l'anaphore du hero et le triplet des mandants, ont été retirées.
 
 ## Structure du site
 
@@ -108,9 +129,13 @@ One-pager avec ces sections dans l'ordre :
 2. 01 / Missions — bento layout 6 cartes (1 grande avec photo + 5 plus petites), exemples chiffrés
 3. 02 / Mandants — 3 cartes sombres (Institutionnels, Patrimoine privé, Acteurs publics), encarts "Récent"
 4. 03 / Méthode — timeline horizontale animée avec 4 phases, livrables à chaque étape
-5. 04 / Livrables — 5 cartes bento (Cartographie interactive, Modèle ouvert, Note 2 formats, Graphiques tenus, Tableau de bord)
+5. 04 / Livrables — 5 cartes bento (Cartographie interactive, Modèle ouvert, Note 2 formats, Graphiques, Tableau de bord)
 6. 05 / Implantations — carte SVG France au trait + Suisse pointillés + DOM-TOM en strip de 7 cellules
-7. Contact — fond sombre, "Parlons de la décision que vous préparez"
+7. À propos — "Le cabinet.", continuité avec Frerault Expertises, 4 principes
+8. Contact — fond sombre, "Nous contacter."
+
+Pages autonomes : /offre, /methode, /cas, /cas/[slug], /notes, /notes/[slug],
+plus /mentions-legales et /confidentialite.
 
 ## Règle d'or
 
@@ -120,3 +145,14 @@ Avant d'écrire ou de générer quoi que ce soit, toujours se demander :
 3. Y a-t-il du bullshit corporate à dégager ?
 
 Si une réponse est non, recommencer.@AGENTS.md
+
+## Contraintes techniques à ne pas casser
+
+- `NumberTicker` rend la valeur finale côté serveur puis anime après hydratation.
+  Ne pas revenir à un état initial à 0 : le HTML servi aux moteurs et aux aperçus
+  de lien afficherait des zéros.
+- L'email du cabinet est `contact@capstone-strategies.fr`, avec le tiret. La
+  variante sans tiret a circulé, elle est fausse.
+- Les mentions légales doivent porter un directeur de la publication et, dès
+  qu'une ligne existera, un numéro de téléphone (article 6 III de la LCEN).
+- La base légale du formulaire est l'intérêt légitime, pas le consentement.

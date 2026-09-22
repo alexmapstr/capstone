@@ -82,7 +82,7 @@ export function Footprint() {
                       {o.name}
                       {o.siege && (
                         <span className="ml-1.5 serif text-[13px] font-normal text-[var(--accent)]">
-                          — siège
+                          siège
                         </span>
                       )}
                     </strong>
@@ -105,8 +105,8 @@ export function Footprint() {
             <div className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">
               <strong className="font-medium text-[var(--text)]">
                 Outre-mer
-              </strong>{" "}
-              — sept zones d&apos;intervention
+              </strong>
+              , sept territoires d&apos;intervention
             </div>
             <div className="serif text-[13px] italic text-[var(--text-sec)]">
               en lien avec les acteurs publics et privés locaux

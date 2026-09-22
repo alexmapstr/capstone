@@ -39,7 +39,7 @@ export function Header() {
 
   return (
     <nav data-scrolled={scrolled} className="sticky top-0 z-[100] flex items-center justify-between border-b border-[var(--line)] bg-[rgba(250,250,247,0.85)] px-14 py-[18px] backdrop-blur-[16px] transition-[padding] duration-300 data-[scrolled=true]:py-[14px] max-md:px-6 max-md:py-[14px]">
-      <a href="/" aria-label="Capstone Strategies — Accueil" className="group/logo flex items-center text-[var(--text)] transition-colors duration-200 hover:text-[var(--accent)]">
+      <a href="/" aria-label="Capstone Strategies, accueil" className="group/logo flex items-center text-[var(--text)] transition-colors duration-200 hover:text-[var(--accent)]">
         <CapstoneLogoFull className="h-12 w-auto max-md:h-10" />
       </a>
 

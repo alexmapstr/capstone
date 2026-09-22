@@ -3,7 +3,7 @@ import { LegalPage } from "@/components/LegalPage";
 import { CAS } from "@/lib/cas";
 
 export const metadata: Metadata = {
-  title: "Cas — Capstone Strategies",
+  title: "Cas · Capstone Strategies",
   description:
     "Situations traitées : immeuble en bloc à preneur unique, portefeuille familial soumis à l'IFI, équipement parapublic sous droit réel. Situation, question, analyse, décision, effet.",
 };

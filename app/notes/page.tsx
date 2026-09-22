@@ -3,7 +3,7 @@ import { LegalPage } from "@/components/LegalPage";
 import { NOTES } from "@/lib/notes";
 
 export const metadata: Metadata = {
-  title: "Notes — Capstone Strategies",
+  title: "Notes · Capstone Strategies",
   description:
     "Notes de Capstone Strategies sur la stratégie immobilière : coût de portage, arbitrage, valeur libre et valeur occupée, patrimoine public.",
 };

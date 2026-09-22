@@ -10,7 +10,7 @@ export function Footer() {
             className="h-10 w-auto text-[var(--on-dark-sec)] max-md:h-8"
           />
           <span className="text-[12px] text-[var(--on-dark-muted)]">
-            © 2026 — Cabinet de conseil indépendant
+            © 2026 Capstone Strategies, cabinet de conseil indépendant
           </span>
         </div>
         <div className="flex flex-wrap gap-2 text-[12px]">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Offre — Capstone Strategies",
+  title: "Offre · Capstone Strategies",
   description:
     "Trois missions de conseil en stratégie immobilière aux honoraires : diagnostic stratégique de patrimoine, schéma directeur et plan d'arbitrage, accompagnement d'une opération. Sans commission, sans mandat de vente.",
 };

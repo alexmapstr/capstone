@@ -27,22 +27,16 @@ export function Contact() {
                 as="h2"
                 className="max-w-[14ch] text-[clamp(48px,6.5vw,96px)] font-medium leading-none tracking-[-0.035em] text-[var(--on-dark)]"
                 tokens={[
-                  "Parlons",
-                  "de",
-                  "la",
-                  { text: "décision", className: "serif text-[var(--accent-light)]" },
-                  "que",
-                  "vous",
-                  "préparez.",
+                  "Nous",
+                  { text: "contacter.", className: "serif text-[var(--accent-light)]" },
                 ]}
                 duration={0.7}
                 stagger={0.05}
               />
 
               <p className="mt-7 max-w-[52ch] text-[16px] leading-[1.55] text-[var(--on-dark-sec)]">
-                Premier échange confidentiel, sans engagement. Nous évaluons
-                ensemble la pertinence d&apos;une mission, son périmètre et son
-                calendrier.
+                Premier entretien confidentiel et sans engagement, pour cerner
+                la question, le périmètre et le calendrier.
               </p>
 
               <div className="mt-12 grid grid-cols-2 gap-10 border-t border-[var(--line-dark)] pt-10 max-md:grid-cols-1 max-md:gap-8">
@@ -56,12 +50,6 @@ export function Contact() {
                   >
                     contact@capstone-strategies.fr
                   </a>
-                  <a
-                    href="tel:+33479000000"
-                    className="block text-[15.5px] leading-[1.55] text-[var(--on-dark)] transition-colors duration-200 hover:text-[var(--accent-light)]"
-                  >
-                    +33 4 79 00 00 00
-                  </a>
                 </div>
 
                 <div>
@@ -71,7 +59,7 @@ export function Contact() {
                   <p className="text-[15.5px] leading-[1.55] text-[var(--on-dark)]">
                     27 allée Albert Sylvestre
                     <br />
-                    73000 Chambéry — France
+                    73000 Chambéry, France
                   </p>
                 </div>
               </div>
@@ -83,7 +71,7 @@ export function Contact() {
                 Écrivez-nous
               </h3>
               <p className="serif mb-8 text-[15px] italic text-[var(--on-dark-sec)]">
-                Quelques lignes sur la décision que vous préparez suffisent.
+                Décrivez brièvement le sujet.
               </p>
               <ContactForm />
             </div>

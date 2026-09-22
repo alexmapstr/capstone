@@ -17,10 +17,8 @@ export function Livrables() {
             </div>
             <div>
               <p className="mb-6 max-w-[50ch] text-[17px] leading-[1.55] text-[var(--text-sec)]">
-                Cartographie web, modèle ouvert, note en deux formats.{" "}
-                <strong className="font-medium text-[var(--text)]">
-                  Conçus pour être ouverts, modifiés, partagés.
-                </strong>
+                Cartographie en ligne, modèle financier ouvert, note de
+                décision en deux formats.
               </p>
               <RevealText
                 className="text-[clamp(40px,5vw,76px)] leading-none tracking-[-0.03em] font-medium max-w-[17ch] text-[var(--text)]"
@@ -37,11 +35,11 @@ export function Livrables() {
         <div className="grid grid-cols-12 gap-4 auto-rows-[minmax(260px,auto)] max-[1100px]:grid-cols-6 max-[700px]:grid-cols-1">
           <Deliverable
             colSpan={6}
-            tag="Livrable signature"
+            tag="Cartographie"
             title="Cartographie interactive du portefeuille"
             largeTitle
-            desc="Un dashboard web accessible au mandant. Chaque actif y est positionné, géolocalisé, photographié, fiché. Rendement, taux de capitalisation, écart valeur bilan / valeur de marché, alertes — actualisés pendant la mission, consultables après."
-            tools={["Web app", "Accès sécurisé", "Mise à jour temps réel"]}
+            desc="Une application web réservée au mandant. Chaque actif y est localisé, photographié et décrit : rendement, taux de capitalisation, écart entre valeur au bilan et valeur de marché, alertes. Mise à jour pendant la mission, consultable ensuite."
+            tools={["Application web", "Accès réservé", "Mise à jour en cours de mission"]}
             visual={<MapDashboardSvg />}
             delay={0.05}
           />
@@ -51,7 +49,7 @@ export function Livrables() {
             tag="Modélisation"
             title="Modèle financier ouvert"
             largeTitle
-            desc="Le modèle Excel ou Google Sheets est remis avec toutes les hypothèses paramétrables. Le mandant peut tester ses propres scénarios, ses propres taux de marché, ses propres horizons. Aucun PDF figé, aucune boîte noire."
+            desc="Le modèle Excel ou Google Sheets est remis avec l'ensemble des hypothèses paramétrables. Le mandant teste ses propres scénarios, ses propres taux et ses propres horizons."
             tools={["Excel", "Google Sheets", "Hypothèses ouvertes"]}
             visual={<SpreadsheetSvg />}
             delay={0.1}
@@ -61,7 +59,7 @@ export function Livrables() {
             colSpan={4}
             tag="Note de décision"
             title="Deux formats, un seul raisonnement"
-            desc="Version courte de 4 pages pour le comité — tenue, structurée, défendable en lecture. Version étayée de 30 à 40 pages pour ceux qui veulent creuser. Pas de pavé de 80 pages."
+            desc="Une synthèse de 4 pages pour le comité, une note détaillée de 30 à 40 pages en appui."
             tools={["4p · synthèse", "30p · détaillée"]}
             visual={<TwoFormatsSvg />}
             delay={0.15}
@@ -70,9 +68,9 @@ export function Livrables() {
           <Deliverable
             colSpan={4}
             tag="Visuels"
-            title="Graphiques tenus"
-            desc="Visualisations financières construites soigneusement — pas de tableaux Excel collés. Sensibilités, distributions de scénarios, courbes de cash-flow, comparables transactionnels."
-            tools={["Charts vectoriels", "Standards FT"]}
+            title="Graphiques"
+            desc="Sensibilités, distributions de scénarios, courbes de flux de trésorerie, comparables de transactions."
+            tools={["Graphiques vectoriels"]}
             visual={<ChartsSvg />}
             delay={0.2}
           />
@@ -81,19 +79,13 @@ export function Livrables() {
             colSpan={4}
             tag="Suivi"
             title="Tableau de bord partagé"
-            desc="Pour les missions longues — un dashboard partagé avec le mandant qui montre l'avancement de chaque chantier en temps réel. Plus de point d'étape PowerPoint mensuel."
+            desc="Pour les missions longues, un tableau de bord partagé avec le mandant qui montre l'avancement de chaque chantier."
             tools={["Web app", "Notifications"]}
             visual={<LiveTrackerSvg />}
             delay={0.25}
           />
         </div>
 
-        {/* Manifeste */}
-        <Reveal delay={0.1}>
-          <p className="serif mt-20 text-center text-[clamp(28px,3.4vw,32px)] leading-[1.2] tracking-[-0.01em] text-[var(--accent)] max-md:mt-14">
-            Nous ne livrons pas des rapports. Nous livrons des outils.
-          </p>
-        </Reveal>
       </div>
     </section>
   );

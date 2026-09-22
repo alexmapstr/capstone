@@ -10,29 +10,29 @@ const PHASES = [
     num: "01",
     title: "Cadrage",
     duration: "1 semaine",
-    desc: "Immersion, lecture du portefeuille, identification des contraintes. La question à trancher est explicitée par écrit.",
-    deliverable: "Livrable — note de cadrage de 8 à 12 pages.",
+    desc: "Entretiens, lecture du portefeuille, identification des contraintes. La question à trancher est formulée par écrit.",
+    deliverable: "Livrable : note de cadrage de 8 à 12 pages.",
   },
   {
     num: "02",
     title: "Analyse",
     duration: "2 à 4 semaines",
-    desc: "Collecte, modélisation, benchmark, terrain. Phase la plus longue : elle conditionne la qualité de la décision.",
-    deliverable: "Livrable — modèle financier, dossier d'analyse étayé.",
+    desc: "Collecte, modélisation, comparables, visites de terrain.",
+    deliverable: "Livrable : modèle financier et dossier d'analyse.",
   },
   {
     num: "03",
     title: "Recommandation",
     duration: "1 semaine",
     desc: "Options hiérarchisées, trade-offs explicités, orientation argumentée et défendable.",
-    deliverable: "Livrable — note de décision pour la gouvernance.",
+    deliverable: "Livrable : note de décision pour la gouvernance.",
   },
   {
     num: "04",
     title: "Suivi",
     duration: "À la demande",
-    desc: "Accompagnement du déploiement, coordination des intervenants, points d'avancement. Le cabinet sécurise la trajectoire — il n'exécute pas.",
-    deliverable: "Livrable — feuille de route opérationnelle.",
+    desc: "Accompagnement de la mise en œuvre, coordination des intervenants, points d'avancement. Le cabinet n'assure ni la maîtrise d'ouvrage ni l'exécution.",
+    deliverable: "Livrable : feuille de route opérationnelle.",
   },
 ];
 
@@ -54,7 +54,7 @@ export function Methode() {
               <p className="mb-6 max-w-[50ch] text-[17px] leading-[1.55] text-[var(--text-sec)]">
                 Quatre phases, un livrable à chaque étape.{" "}
                 <strong className="font-medium text-[var(--text)]">
-                  Cadrage rapide, analyse serrée, recommandation à date.
+                  Chaque phase est close par un livrable écrit.
                 </strong>
               </p>
               <RevealText

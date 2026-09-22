@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Méthode et règle de conflit d'intérêts — Capstone Strategies",
+  title: "Méthode et règle de conflit d'intérêts · Capstone Strategies",
   description:
     "Comment Capstone Strategies travaille : coût de portage complet, valeur pour qui, déroulé du diagnostic en dix jours, et la règle de conflit d'intérêts qui sépare le conseil de l'expertise.",
 };

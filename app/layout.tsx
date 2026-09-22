@@ -34,7 +34,7 @@ const ORG_JSONLD = {
     addressLocality: "Chambéry",
     addressCountry: "FR",
   },
-  email: "contact@capstonestrategies.fr",
+  email: "contact@capstone-strategies.fr",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Missions",
@@ -48,9 +48,9 @@ const ORG_JSONLD = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://capstone-strategies.fr"),
-  title: "Capstone Strategies — Conseil en stratégie immobilière",
+  title: "Capstone Strategies, conseil en stratégie immobilière",
   description:
-    "Cabinet de conseil indépendant en stratégie immobilière. Avant un arbitrage, une cession, une acquisition — l'analyse qui sécurise la décision. Chambéry, Paris, Lyon, Annecy, Aix-en-Provence, Monaco.",
+    "Cabinet de conseil indépendant en stratégie immobilière : arbitrage, cession, acquisition, schéma directeur. Chambéry, Paris, Lyon, Annecy, Aix-en-Provence, Monaco.",
 };
 
 export default function RootLayout({

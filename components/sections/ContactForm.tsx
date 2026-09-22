@@ -11,20 +11,20 @@ export function ContactForm() {
     e.preventDefault();
     setSubmitting(true);
     const data = new FormData(e.currentTarget);
-    const subject = `Capstone Strategies — Contact ${data.get("nom") ?? ""}`;
+    const subject = `Capstone Strategies · Contact ${data.get("nom") ?? ""}`;
     const body = [
       `Prénom : ${data.get("prenom")}`,
       `Nom : ${data.get("nom")}`,
       `Email : ${data.get("email")}`,
-      `Société : ${data.get("societe") ?? "—"}`,
-      `Nature : ${data.get("nature") ?? "—"}`,
-      `Mission envisagée : ${data.get("motif") ?? "—"}`,
-      `Nombre d'actifs : ${data.get("actifs") ?? "—"}`,
+      `Société : ${data.get("societe") ?? "non précisé"}`,
+      `Nature : ${data.get("nature") ?? "non précisé"}`,
+      `Mission envisagée : ${data.get("motif") ?? "non précisé"}`,
+      `Nombre d'actifs : ${data.get("actifs") ?? "non précisé"}`,
       "",
       "Message :",
       String(data.get("message") ?? ""),
     ].join("\n");
-    const url = `mailto:contact@capstonestrategies.fr?subject=${encodeURIComponent(
+    const url = `mailto:contact@capstone-strategies.fr?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = url;

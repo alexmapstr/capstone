@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — Capstone Strategies",
+  title: "Mentions légales · Capstone Strategies",
   description:
-    "Mentions légales du site Capstone Strategies — éditeur, hébergeur, propriété intellectuelle.",
+    "Mentions légales du site Capstone Strategies : éditeur, directeur de la publication, hébergeur, propriété intellectuelle.",
 };
 
 export default function MentionsLegales() {
@@ -16,15 +16,12 @@ export default function MentionsLegales() {
         <br />
         27 allée Albert Sylvestre
         <br />
-        73000 Chambéry — France
+        73000 Chambéry, France
       </p>
       <p>
-        Téléphone :{" "}
-        <a href="tel:+33479000000">+33 4 79 00 00 00</a>
-        <br />
         Email :{" "}
-        <a href="mailto:contact@capstonestrategies.fr">
-          contact@capstonestrategies.fr
+        <a href="mailto:contact@capstone-strategies.fr">
+          contact@capstone-strategies.fr
         </a>
       </p>
       <ul>
@@ -36,7 +33,7 @@ export default function MentionsLegales() {
           <strong>Capital social</strong> : 1 000 €
         </li>
         <li>
-          <strong>RCS</strong> : Chambéry — 945 302 859
+          <strong>RCS</strong> : Chambéry 945 302 859
         </li>
         <li>
           <strong>SIREN</strong> : 945 302 859
@@ -48,15 +45,14 @@ export default function MentionsLegales() {
           <strong>N° TVA intracommunautaire</strong> : FR02 945 302 859
         </li>
         <li>
-          <strong>Code APE / NAF</strong> : 68.31Z — Agences immobilières
+          <strong>Code APE / NAF</strong> : 68.31Z
         </li>
         <li>
           <strong>Date d&apos;immatriculation</strong> : 3 juin 2025
         </li>
       </ul>
       <p>
-        <strong>Directeur de la publication</strong> : [À compléter — nom du
-        gérant]
+        <strong>Directeur de la publication</strong> : Alex Frerault, gérant
       </p>
 
       <h2>Hébergement</h2>
@@ -72,8 +68,8 @@ export default function MentionsLegales() {
 
       <h2>Propriété intellectuelle</h2>
       <p>
-        L&apos;ensemble des éléments composant ce site — textes, graphismes,
-        logos, photographies, vidéos, code source — est la propriété
+        L&apos;ensemble des éléments composant ce site, textes, graphismes,
+        logos, photographies, vidéos et code source, est la propriété
         exclusive de Capstone Strategies ou de ses partenaires. Toute
         reproduction, représentation, adaptation ou exploitation, partielle
         ou totale, sans autorisation écrite préalable, est interdite et
@@ -93,8 +89,8 @@ export default function MentionsLegales() {
         le cabinet ne saurait garantir l&apos;exhaustivité ou
         l&apos;absence d&apos;erreurs. L&apos;utilisateur est invité à
         signaler toute imprécision à l&apos;adresse{" "}
-        <a href="mailto:contact@capstonestrategies.fr">
-          contact@capstonestrategies.fr
+        <a href="mailto:contact@capstone-strategies.fr">
+          contact@capstone-strategies.fr
         </a>
         .
       </p>

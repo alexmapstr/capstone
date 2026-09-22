@@ -38,7 +38,7 @@ export function LegalPage({
           />
           {lastUpdate && (
             <p className="mt-6 text-[12px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
-              Dernière mise à jour — {lastUpdate}
+              Dernière mise à jour : {lastUpdate}
             </p>
           )}
         </header>

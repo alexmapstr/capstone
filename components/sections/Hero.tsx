@@ -54,7 +54,7 @@ export function Hero() {
       {/* Inner — eyebrow + title + summary */}
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-rows-[auto_1fr_auto] gap-12 px-14 pt-28 max-[1000px]:gap-8 max-[1000px]:px-6 max-[1000px]:pt-20">
         <div className="flex items-center gap-[14px] text-[11.5px] font-medium uppercase tracking-[0.18em] text-[var(--on-dark-sec)] before:h-[1px] before:w-8 before:bg-[rgba(176,183,196,0.45)] before:content-['']">
-          Cabinet de conseil — France, Monaco
+          Cabinet de conseil indépendant · France et Monaco
         </div>
 
         <RevealText
@@ -72,12 +72,11 @@ export function Hero() {
         />
 
         <p className="self-end max-w-[56ch] mb-10 text-[18px] leading-[1.55] font-normal text-[var(--on-dark-sec)] max-[1000px]:mb-6 max-[1000px]:text-[16px]">
-          Avant un arbitrage. Avant une cession. Avant une acquisition. Nous
-          produisons l&apos;analyse qui sécurise la décision —{" "}
+          Conseil en amont d&apos;un arbitrage, d&apos;une cession ou d&apos;une
+          acquisition.{" "}
           <strong className="font-medium text-[var(--on-dark)]">
-            chiffrée, indépendante, écrite
+            Analyse chiffrée, remise par écrit, sans intérêt à la transaction.
           </strong>
-          .
         </p>
       </div>
 
