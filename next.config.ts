@@ -1,11 +1,11 @@
 import type { NextConfig } from "next";
-import { withPayload } from "@payloadcms/next/withPayload";
 
 const nextConfig: NextConfig = {
-  // Tell Turbopack the workspace root is THIS folder, not the parent that has another lockfile.
+  // Indique à Turbopack que la racine du projet est ce dossier, et non le
+  // parent qui contient un autre lockfile.
   turbopack: {
     root: __dirname,
   },
 };
 
-export default withPayload(nextConfig);
+export default nextConfig;
