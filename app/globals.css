@@ -124,6 +124,43 @@
     }
   }
 
+  /* Notes — colonne de lecture éditoriale, plus aérée que les pages légales */
+  .note-prose {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-sec);
+  }
+  .note-prose p {
+    margin-bottom: 26px;
+    text-align: justify;
+    hyphens: auto;
+  }
+  .note-prose h2 {
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    font-weight: 500;
+    color: var(--text);
+    margin-top: 56px;
+    margin-bottom: 20px;
+  }
+  .note-prose section:first-child h2 { margin-top: 0; }
+  .note-prose strong { font-weight: 500; color: var(--text); }
+  .note-prose a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--line-hi);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s;
+  }
+  .note-prose a:hover { text-decoration-color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .note-prose { font-size: 16px; }
+    .note-prose p { text-align: left; }
+    .note-prose h2 { font-size: 22px; margin-top: 44px; }
+  }
+
   /* Legal pages prose — readable column styling */
   .legal-prose h2 {
     font-size: 22px;

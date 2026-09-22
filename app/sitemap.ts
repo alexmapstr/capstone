@@ -9,6 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages.map((p) => ({ url: `${BASE}${p}`, lastModified: new Date() })),
     ...CAS.map((c) => ({ url: `${BASE}/cas/${c.slug}`, lastModified: new Date() })),
-    ...NOTES.map((n) => ({ url: `${BASE}/notes/${n.slug}`, lastModified: new Date() })),
+    ...NOTES.map((n) => ({ url: `${BASE}/notes/${n.slug}`, lastModified: new Date(`${n.date}T12:00:00Z`) })),
   ];
 }

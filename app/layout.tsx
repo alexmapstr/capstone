@@ -51,6 +51,9 @@ export const metadata: Metadata = {
   title: "Capstone Strategies, conseil en stratégie immobilière",
   description:
     "Cabinet de conseil indépendant en stratégie immobilière : arbitrage, cession, acquisition, schéma directeur. Chambéry, Paris, Lyon, Annecy, Aix-en-Provence, Monaco.",
+  alternates: {
+    types: { "application/rss+xml": "/notes/rss.xml" },
+  },
 };
 
 export default function RootLayout({

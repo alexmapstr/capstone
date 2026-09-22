@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LegalPage } from "@/components/LegalPage";
 import { CAS, getCas } from "@/lib/cas";
+import Link from "next/link";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -36,8 +37,8 @@ export default async function CasPage({ params }: Params) {
       <hr />
       <p>
         Situation traitée par le dirigeant avant la création de Capstone Strategies,
-        présentée sous forme anonymisée. <a href="/cas">Tous les cas</a> ·{" "}
-        <a href="/offre">Les missions</a>
+        présentée sous forme anonymisée. <Link href="/cas">Tous les cas</Link> ·{" "}
+        <Link href="/offre">Les missions</Link>
       </p>
     </LegalPage>
   );

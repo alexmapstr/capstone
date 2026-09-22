@@ -5,6 +5,8 @@ import { useEffect, useMemo, useState } from "react";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { useActiveSection } from "@/lib/use-active-section";
 import { CapstoneLogoFull } from "@/components/CapstoneLogo";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { href: "/offre", id: "offre", label: "Offre" },
@@ -21,10 +23,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const ids = useMemo(() => SECTION_IDS, []);
   const sectionActive = useActiveSection(ids);
-  const [path, setPath] = useState("");
-  useEffect(() => {
-    setPath(window.location.pathname);
-  }, []);
+  const path = usePathname() ?? "";
   const pageActive = NAV_LINKS.find((l) => !l.href.startsWith("/#") && path.startsWith(l.href))?.id;
   const activeId = pageActive ?? (path === "/" ? sectionActive : null);
 
@@ -39,9 +38,9 @@ export function Header() {
 
   return (
     <nav data-scrolled={scrolled} className="sticky top-0 z-[100] flex items-center justify-between border-b border-[var(--line)] bg-[rgba(250,250,247,0.85)] px-14 py-[18px] backdrop-blur-[16px] transition-[padding] duration-300 data-[scrolled=true]:py-[14px] max-md:px-6 max-md:py-[14px]">
-      <a href="/" aria-label="Capstone Strategies, accueil" className="group/logo flex items-center text-[var(--text)] transition-colors duration-200 hover:text-[var(--accent)]">
+      <Link href="/" aria-label="Capstone Strategies, accueil" className="group/logo flex items-center text-[var(--text)] transition-colors duration-200 hover:text-[var(--accent)]">
         <CapstoneLogoFull className="h-12 w-auto max-md:h-10" />
-      </a>
+      </Link>
 
       <ul className="flex list-none gap-9 max-md:hidden">
         {NAV_LINKS.map((l) => (
@@ -52,10 +51,10 @@ export function Header() {
       </ul>
 
       <Magnetic strength={6} radius={2}>
-        <a href="/#contact" className="group/cta inline-flex items-center gap-2 border border-[var(--text)] px-[22px] py-[11px] text-[13px] font-medium text-[var(--text)] transition-colors duration-200 hover:bg-[var(--text)] hover:text-[var(--bg)]">
+        <Link href="/#contact" className="group/cta inline-flex items-center gap-2 border border-[var(--text)] px-[22px] py-[11px] text-[13px] font-medium text-[var(--text)] transition-colors duration-200 hover:bg-[var(--text)] hover:text-[var(--bg)]">
           Nous contacter
           <ArrowRight size={14} strokeWidth={1.6} className="transition-transform duration-300 group-hover/cta:translate-x-[3px]" />
-        </a>
+        </Link>
       </Magnetic>
     </nav>
   );

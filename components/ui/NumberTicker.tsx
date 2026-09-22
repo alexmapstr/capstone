@@ -56,31 +56,28 @@ export function NumberTicker({
     formatNumber(latest, decimals, locale)
   );
 
+  // Le rendu serveur et le premier rendu client portent la valeur finale :
+  // pas d'écart d'hydratation, et pas de 0 dans le HTML servi.
   const [text, setText] = useState(() =>
     formatNumber(value, decimals, locale)
   );
 
-  // Après hydratation : on repart de 0 pour que l'animation soit visible,
-  // sauf si l'utilisateur a demandé à réduire les animations.
-  const [animate, setAnimate] = useState(false);
+  // À l'entrée dans le viewport, on repart de 0 puis on anime. motionValue est
+  // un système externe : aucun setState synchrone dans le corps de l'effet.
   useEffect(() => {
-    const reduced =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!inView) return;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
     if (reduced) return;
-    setAnimate(true);
-    setText(formatNumber(0, decimals, locale));
-  }, [decimals, locale]);
 
-  useEffect(() => {
-    if (animate && inView) motionValue.set(value);
-  }, [animate, inView, value, motionValue]);
+    motionValue.jump(0);
+    const frame = requestAnimationFrame(() => motionValue.set(value));
+    return () => cancelAnimationFrame(frame);
+  }, [inView, value, motionValue]);
 
-  useEffect(() => {
-    if (!animate) return;
-    const unsub = display.on("change", (v) => setText(v));
-    return () => unsub();
-  }, [animate, display]);
+  // setText n'est appelé que depuis l'abonnement, jamais dans le corps.
+  useEffect(() => display.on("change", (v) => setText(v)), [display]);
 
   return (
     <motion.span ref={ref} className={className}>

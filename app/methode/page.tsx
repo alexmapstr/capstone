@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Méthode et règle de conflit d'intérêts · Capstone Strategies",
@@ -123,8 +124,8 @@ export default function Methode() {
 
       <hr />
       <p>
-        Les trois missions sont décrites sur la page <a href="/offre">Offre</a>. Les
-        situations traitées sont présentées sur la page <a href="/cas">Cas</a>.
+        Les trois missions sont décrites sur la page <Link href="/offre">Offre</Link>. Les
+        situations traitées sont présentées sur la page <Link href="/cas">Cas</Link>.
       </p>
     </LegalPage>
   );

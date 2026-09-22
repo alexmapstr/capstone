@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Offre · Capstone Strategies",
@@ -142,10 +143,10 @@ export default function Offre() {
         final ; facturation mensuelle pour les missions de plus de deux mois. Aucune
         commission, aucun apport d&apos;affaires, aucune rémunération au succès. La
         règle de conflit d&apos;intérêts applicable à toutes les missions est publiée
-        sur la page <a href="/methode">Méthode</a>.
+        sur la page <Link href="/methode">Méthode</Link>.
       </p>
       <p>
-        <a href="/#contact">Demander un entretien de trente minutes</a>
+        <Link href="/#contact">Demander un entretien de trente minutes</Link>
       </p>
     </LegalPage>
   );

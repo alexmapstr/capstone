@@ -1,4 +1,5 @@
 import { CapstoneLogoFull } from "@/components/CapstoneLogo";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -14,13 +15,13 @@ export function Footer() {
           </span>
         </div>
         <div className="flex flex-wrap gap-2 text-[12px]">
-          <a href="/offre" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Offre</a>
+          <Link href="/offre" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Offre</Link>
           <span aria-hidden>·</span>
-          <a href="/methode" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Méthode</a>
+          <Link href="/methode" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Méthode</Link>
           <span aria-hidden>·</span>
-          <a href="/cas" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Cas</a>
+          <Link href="/cas" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Cas</Link>
           <span aria-hidden>·</span>
-          <a href="/notes" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Notes</a>
+          <Link href="/notes" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Notes</Link>
           <span aria-hidden>·</span>
           <a
             href="/mentions-legales"
