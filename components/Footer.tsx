@@ -13,7 +13,15 @@ export function Footer() {
             © 2026 — Cabinet de conseil indépendant
           </span>
         </div>
-        <div className="flex gap-2 text-[12px]">
+        <div className="flex flex-wrap gap-2 text-[12px]">
+          <a href="/offre" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Offre</a>
+          <span aria-hidden>·</span>
+          <a href="/methode" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Méthode</a>
+          <span aria-hidden>·</span>
+          <a href="/cas" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Cas</a>
+          <span aria-hidden>·</span>
+          <a href="/notes" className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]">Notes</a>
+          <span aria-hidden>·</span>
           <a
             href="/mentions-legales"
             className="text-[var(--on-dark-sec)] transition-colors duration-200 hover:text-[var(--on-dark)]"

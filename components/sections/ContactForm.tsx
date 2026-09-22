@@ -17,6 +17,9 @@ export function ContactForm() {
       `Nom : ${data.get("nom")}`,
       `Email : ${data.get("email")}`,
       `Société : ${data.get("societe") ?? "—"}`,
+      `Nature : ${data.get("nature") ?? "—"}`,
+      `Mission envisagée : ${data.get("motif") ?? "—"}`,
+      `Nombre d'actifs : ${data.get("actifs") ?? "—"}`,
       "",
       "Message :",
       String(data.get("message") ?? ""),
@@ -42,7 +45,30 @@ export function ContactForm() {
         required
         colSpan={2}
       />
-      <Field label="Société" name="societe" colSpan={2} />
+      <Field label="Société ou collectivité" name="societe" colSpan={2} />
+      <SelectField
+        label="Vous êtes"
+        name="nature"
+        options={[
+          "Collectivité, établissement public ou parapublic",
+          "Foncière, groupe familial, family office",
+          "Assureur, direction immobilière",
+          "Entreprise, immobilier d'exploitation",
+          "Notaire, avocat, expert-comptable, banquier privé",
+          "Autre",
+        ]}
+      />
+      <SelectField
+        label="Mission envisagée"
+        name="motif"
+        options={[
+          "Diagnostic stratégique de patrimoine",
+          "Schéma directeur et plan d'arbitrage",
+          "Accompagnement d'une opération",
+          "Je ne sais pas encore",
+        ]}
+      />
+      <Field label="Nombre d'actifs concernés" name="actifs" colSpan={2} />
       <Field
         label="Sujet"
         name="message"
@@ -72,6 +98,42 @@ export function ContactForm() {
         </Magnetic>
       </div>
     </form>
+  );
+}
+
+function SelectField({
+  label,
+  name,
+  options,
+}: {
+  label: string;
+  name: string;
+  options: string[];
+}) {
+  return (
+    <div className="max-md:col-span-1">
+      <label
+        htmlFor={name}
+        className="mb-1.5 block text-[10.5px] font-medium uppercase tracking-[0.16em] text-[var(--on-dark-muted)]"
+      >
+        {label}
+      </label>
+      <select
+        id={name}
+        name={name}
+        defaultValue=""
+        className="w-full appearance-none rounded-none border-0 border-b border-[var(--line-dark)] bg-transparent px-0 pb-2 pt-1.5 text-[15px] text-[var(--on-dark)] transition-colors duration-200 focus:border-[var(--accent-light)] focus:outline-none [&>option]:text-[var(--text)]"
+      >
+        <option value="" disabled>
+          Choisir
+        </option>
+        {options.map((o) => (
+          <option key={o} value={o}>
+            {o}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 }
 
