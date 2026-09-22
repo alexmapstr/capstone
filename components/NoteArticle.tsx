@@ -1,13 +1,63 @@
-import type { Note } from "@/lib/notes";
+import Link from "next/link";
+import type { Inline, Note, NoteNode } from "@/lib/note-types";
 import { RevealText } from "@/components/ui/RevealText";
 import { formatNoteDate, readingMinutes } from "@/lib/notes";
-import Link from "next/link";
 
 type NoteArticleProps = {
   note: Note;
   /** Note proposée en fin d'article. */
   next?: Note;
 };
+
+function InlineText({ content }: { content: Inline[] }) {
+  return (
+    <>
+      {content.map((part, i) => {
+        let node: React.ReactNode = part.text;
+        if (part.code) node = <code key={i}>{node}</code>;
+        if (part.bold) node = <strong>{node}</strong>;
+        if (part.italic) node = <em>{node}</em>;
+        if (part.href) {
+          node = part.href.startsWith("/") ? (
+            <Link href={part.href}>{node}</Link>
+          ) : (
+            <a href={part.href} target="_blank" rel="noopener noreferrer">
+              {node}
+            </a>
+          );
+        }
+        return <span key={i}>{node}</span>;
+      })}
+    </>
+  );
+}
+
+function Block({ node }: { node: NoteNode }) {
+  switch (node.type) {
+    case "heading":
+      return node.level === 3 ? <h3>{node.text}</h3> : <h2>{node.text}</h2>;
+    case "paragraph":
+      return (
+        <p>
+          <InlineText content={node.content} />
+        </p>
+      );
+    case "quote":
+      return (
+        <blockquote>
+          <InlineText content={node.content} />
+        </blockquote>
+      );
+    case "list": {
+      const items = node.items.map((item, i) => (
+        <li key={i}>
+          <InlineText content={item} />
+        </li>
+      ));
+      return node.ordered ? <ol>{items}</ol> : <ul>{items}</ul>;
+    }
+  }
+}
 
 /**
  * Mise en page éditoriale d'une note : chapeau, métadonnées, colonne de lecture
@@ -17,7 +67,7 @@ export function NoteArticle({ note, next }: NoteArticleProps) {
   const tokens = note.title
     .split(/\s+/)
     .map((w) =>
-      w.replace(/[.,;:]$/, "") === note.accentWord
+      note.accentWord && w.replace(/[.,;:]$/, "") === note.accentWord
         ? { text: w, className: "serif text-[var(--accent)]" }
         : w
     );
@@ -47,19 +97,16 @@ export function NoteArticle({ note, next }: NoteArticleProps) {
             tokens={tokens}
           />
 
-          <p className="serif mt-7 max-w-[56ch] text-[21px] italic leading-[1.5] text-[var(--text-sec)]">
-            {note.summary}
-          </p>
+          {note.summary && (
+            <p className="serif mt-7 max-w-[56ch] text-[21px] italic leading-[1.5] text-[var(--text-sec)]">
+              {note.summary}
+            </p>
+          )}
         </header>
 
         <div className="note-prose mx-auto mt-14 max-w-[68ch]">
-          {note.body.map((block, i) => (
-            <section key={i}>
-              {block.heading && <h2>{block.heading}</h2>}
-              {block.paragraphs.map((p, j) => (
-                <p key={j}>{p}</p>
-              ))}
-            </section>
+          {note.body.map((node, i) => (
+            <Block key={i} node={node} />
           ))}
         </div>
 

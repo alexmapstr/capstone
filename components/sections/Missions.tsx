@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealText } from "@/components/ui/RevealText";
 
-const FEATURED_PHOTO = "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=85";
 
 type FilterKey = "all" | "invest" | "optimize" | "secure" | "decide";
 
@@ -179,9 +178,8 @@ function FeaturedMission() {
     <Reveal className="col-span-8 max-[1100px]:col-span-6 max-[700px]:col-span-1" duration={0.6}>
       <article className="group/mission relative flex h-full flex-col overflow-hidden border border-[var(--dark)] bg-[var(--dark)] text-[var(--on-dark)] transition-[border-color,transform,box-shadow] duration-500 hover:-translate-y-0.5">
         <div className="absolute inset-0 z-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={FEATURED_PHOTO} alt="" className="h-full w-full object-cover opacity-45 [filter:grayscale(100%)_contrast(1)_brightness(0.28)] transition-[transform,opacity] duration-700 group-hover/mission:scale-[1.04] group-hover/mission:opacity-55" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,20,36,0.82)_0%,rgba(11,20,36,0.96)_100%)]" />
+          <ParcelBackdrop />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,20,36,0.62)_0%,rgba(11,20,36,0.94)_100%)]" />
         </div>
         <span className="absolute bottom-0 left-0 z-[2] h-0.5 w-0 bg-[var(--accent)] transition-[width] duration-500 group-hover/mission:w-full" />
         <div className="relative z-[1] flex h-full flex-col p-7 max-[700px]:p-6">
@@ -263,5 +261,68 @@ function MissionCard({ mission, index, colSpan }: { mission: Mission; index: num
         )}
       </article>
     </motion.div>
+  );
+}
+
+/* Fond de plan parcellaire. Vectoriel, inline, aucun appel reseau : la carte
+   signature ne depend plus d'un hebergeur tiers en production. */
+function ParcelBackdrop() {
+  const line = "rgba(176,183,196,0.20)";
+  const soft = "rgba(176,183,196,0.10)";
+  const fill = "rgba(104,144,232,0.07)";
+  const fillHi = "rgba(104,144,232,0.16)";
+
+  return (
+    <svg
+      viewBox="0 0 640 420"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+      className="h-full w-full opacity-70 transition-[transform,opacity] duration-700 group-hover/mission:scale-[1.04] group-hover/mission:opacity-90"
+    >
+      <g transform="rotate(-11 320 210)">
+        <rect x="-40" y="-30" width="70" height="120" fill={fill} stroke={line} strokeWidth="1" />
+        <rect x="30" y="-30" width="95" height="120" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="125" y="-30" width="60" height="120" fill={fillHi} stroke="#6890e8" strokeWidth="1" opacity="0.6" />
+        <rect x="185" y="-30" width="105" height="120" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="330" y="-30" width="85" height="120" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="415" y="-30" width="70" height="120" fill={fill} stroke={line} strokeWidth="1" />
+        <rect x="485" y="-30" width="95" height="120" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="580" y="-30" width="100" height="120" fill="none" stroke={line} strokeWidth="1" />
+
+        <rect x="-40" y="120" width="90" height="150" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="50" y="120" width="65" height="150" fill={fill} stroke={line} strokeWidth="1" />
+        <rect x="115" y="120" width="110" height="150" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="225" y="120" width="65" height="150" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="330" y="120" width="120" height="150" fill={fillHi} stroke="#6890e8" strokeWidth="1" opacity="0.55" />
+        <rect x="450" y="120" width="75" height="150" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="525" y="120" width="155" height="150" fill="none" stroke={line} strokeWidth="1" />
+
+        <rect x="-40" y="300" width="120" height="150" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="80" y="300" width="70" height="150" fill={fill} stroke={line} strokeWidth="1" />
+        <rect x="150" y="300" width="140" height="150" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="330" y="300" width="90" height="150" fill="none" stroke={line} strokeWidth="1" />
+        <rect x="420" y="300" width="60" height="150" fill={fill} stroke={line} strokeWidth="1" />
+        <rect x="480" y="300" width="200" height="150" fill="none" stroke={line} strokeWidth="1" />
+
+        <line x1="30" y1="30" x2="125" y2="30" stroke={soft} strokeWidth="1" />
+        <line x1="185" y1="45" x2="290" y2="45" stroke={soft} strokeWidth="1" />
+        <line x1="485" y1="20" x2="580" y2="20" stroke={soft} strokeWidth="1" />
+        <line x1="115" y1="195" x2="225" y2="195" stroke={soft} strokeWidth="1" />
+        <line x1="525" y1="180" x2="680" y2="180" stroke={soft} strokeWidth="1" />
+        <line x1="600" y1="120" x2="600" y2="270" stroke={soft} strokeWidth="1" />
+        <line x1="150" y1="375" x2="290" y2="375" stroke={soft} strokeWidth="1" />
+        <line x1="480" y1="360" x2="680" y2="360" stroke={soft} strokeWidth="1" />
+        <line x1="560" y1="300" x2="560" y2="450" stroke={soft} strokeWidth="1" />
+
+        <line x1="310" y1="-60" x2="310" y2="480" stroke="rgba(176,183,196,0.14)" strokeWidth="1" strokeDasharray="6 5" />
+        <line x1="-80" y1="105" x2="720" y2="105" stroke="rgba(176,183,196,0.14)" strokeWidth="1" strokeDasharray="6 5" />
+        <line x1="-80" y1="285" x2="720" y2="285" stroke="rgba(176,183,196,0.14)" strokeWidth="1" strokeDasharray="6 5" />
+
+        <circle cx="155" cy="30" r="4" fill="#6890e8" />
+        <circle cx="390" cy="195" r="4" fill="#6890e8" />
+        <circle cx="115" cy="375" r="3" fill="rgba(176,183,196,0.5)" />
+        <circle cx="450" cy="375" r="3" fill="rgba(176,183,196,0.5)" />
+      </g>
+    </svg>
   );
 }

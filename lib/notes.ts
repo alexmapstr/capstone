@@ -1,15 +1,25 @@
-export type Note = {
+import type { Note, NoteNode } from "./note-types";
+import { noteText } from "./note-types";
+import { fetchNotionNotes, notionConfigured } from "./notion";
+
+export type { Note, NoteNode } from "./note-types";
+
+/**
+ * Notes écrites dans le dépôt. Elles ne servent que de repli : la source
+ * normale est la base Notion « Notes » de l'espace Capstone Strategies. Le
+ * repli évite qu'un jeton absent ou une panne de Notion ne publie un blog vide.
+ */
+type LocalNote = {
   slug: string;
   title: string;
   accentWord: string;
-  /** Date de publication au format ISO, seule source pour le RSS et le sitemap. */
   date: string;
   category: string;
   summary: string;
   body: { heading?: string; paragraphs: string[] }[];
 };
 
-export const NOTES: Note[] = [
+const FALLBACK_NOTES: LocalNote[] = [
   {
     slug: "ecart-valeur-bilan-valeur-marche",
     title: "L'écart entre valeur au bilan et valeur de marché",
@@ -61,7 +71,7 @@ export const NOTES: Note[] = [
     slug: "patrimoine-non-pilote",
     title: "Ce que coûte un patrimoine qu'on ne pilote pas",
     accentWord: "pilote",
-    date: "2026-10-02",
+    date: "2026-09-02",
     category: "Analyse",
     summary:
       "Le coût de portage complet d'un patrimoine immobilier est la donnée la plus importante et la moins calculée. Ce qu'il recouvre, pourquoi il n'est pas calculé, ce qui change quand il l'est.",
@@ -114,18 +124,48 @@ export const NOTES: Note[] = [
   },
 ];
 
-/** Notes publiées, de la plus récente à la plus ancienne. */
-export function getNotes() {
-  return [...NOTES].sort((a, b) => b.date.localeCompare(a.date));
+/** Passage de la forme locale, en paragraphes bruts, à la forme commune. */
+function fromLocal(note: LocalNote): Note {
+  const body: NoteNode[] = [];
+  for (const block of note.body) {
+    if (block.heading) body.push({ type: "heading", level: 2, text: block.heading });
+    for (const paragraph of block.paragraphs) {
+      body.push({ type: "paragraph", content: [{ text: paragraph }] });
+    }
+  }
+  return { ...note, body };
 }
 
-export function getNote(slug: string) {
-  return NOTES.find((n) => n.slug === slug);
+function sorted(notes: Note[]) {
+  return [...notes].sort((a, b) => b.date.localeCompare(a.date));
+}
+
+/**
+ * Notes publiées, de la plus récente à la plus ancienne.
+ *
+ * Notion d'abord. Si l'appel échoue, on journalise et on sert le repli : une
+ * indisponibilité de Notion ne doit pas faire échouer un déploiement.
+ */
+export async function getNotes(): Promise<Note[]> {
+  if (notionConfigured()) {
+    try {
+      const notes = await fetchNotionNotes();
+      if (notes.length > 0) return sorted(notes);
+      console.warn("Notion n'a renvoyé aucune note publiée, repli sur les notes du dépôt.");
+    } catch (error) {
+      console.error("Lecture des notes depuis Notion impossible, repli sur le dépôt.", error);
+    }
+  }
+  return sorted(FALLBACK_NOTES.map(fromLocal));
+}
+
+export async function getNote(slug: string) {
+  return (await getNotes()).find((n) => n.slug === slug);
 }
 
 /** Note publiée juste avant celle-ci, pour le lien de fin d'article. */
-export function getNextNote(slug: string) {
-  const ordered = getNotes();
+export async function getNextNote(slug: string) {
+  const ordered = await getNotes();
   const i = ordered.findIndex((n) => n.slug === slug);
   if (i === -1) return undefined;
   return ordered[i + 1] ?? (ordered.length > 1 ? ordered[0] : undefined);
@@ -141,11 +181,6 @@ export function formatNoteDate(iso: string) {
 
 /** Durée de lecture estimée, à 200 mots par minute. */
 export function readingMinutes(note: Note) {
-  const words = note.body
-    .flatMap((b) => [b.heading ?? "", ...b.paragraphs])
-    .join(" ")
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean).length;
+  const words = noteText(note).trim().split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 200));
 }

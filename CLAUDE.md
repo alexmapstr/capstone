@@ -156,3 +156,22 @@ Si une réponse est non, recommencer.@AGENTS.md
 - Les mentions légales doivent porter un directeur de la publication et, dès
   qu'une ligne existera, un numéro de téléphone (article 6 III de la LCEN).
 - La base légale du formulaire est l'intérêt légitime, pas le consentement.
+
+## Les notes viennent de Notion
+
+Les notes publiées sur /notes sont écrites dans la base Notion « Notes », sous
+la page Capstone Strategies. Le site la lit au build et la revalide toutes les
+heures. Seules les lignes en statut « Publié » sortent.
+
+Deux variables d'environnement Vercel : NOTION_TOKEN et
+NOTION_NOTES_DATABASE_ID (voir .env.example). Si elles manquent ou si Notion
+est indisponible, le site sert les notes de repli écrites dans lib/notes.ts et
+le build réussit quand même. Ce repli est volontaire : ne pas le supprimer.
+
+Pour ajouter une note, écrire dans Notion, pas dans le code. Renseigner le
+Slug avant de publier : il devient l'URL et ne doit plus changer ensuite.
+
+Deux contraintes techniques : `revalidate` doit rester une valeur littérale
+dans les fichiers de route, Next refuse un identifiant importé ; et l'appel
+Notion doit utiliser `next: { revalidate }` et non `cache: "no-store"`, qui
+rendrait les pages dynamiques et déclencherait un appel par visite.

@@ -161,6 +161,46 @@
     .note-prose h2 { font-size: 22px; margin-top: 44px; }
   }
 
+  .note-prose ul,
+  .note-prose ol {
+    margin: 0 0 26px 0;
+    padding-left: 22px;
+  }
+  .note-prose ul { list-style: none; padding-left: 20px; }
+  .note-prose ul li { position: relative; }
+  .note-prose ul li::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 15px;
+    width: 8px;
+    height: 1px;
+    background: var(--line-hi);
+  }
+  .note-prose li { margin-bottom: 10px; text-align: left; }
+  .note-prose blockquote {
+    margin: 40px 0;
+    padding-left: 28px;
+    border-left: 1px solid var(--line-hi);
+    font-size: 21px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+  .note-prose code {
+    font-size: 0.9em;
+    background: var(--bg-alt);
+    padding: 2px 6px;
+  }
+  .note-prose h3 {
+    font-size: 20px;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    color: var(--text);
+    margin-top: 40px;
+    margin-bottom: 14px;
+  }
+
   /* Legal pages prose — readable column styling */
   .legal-prose h2 {
     font-size: 22px;

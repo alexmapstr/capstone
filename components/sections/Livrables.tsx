@@ -38,8 +38,8 @@ export function Livrables() {
             tag="Cartographie"
             title="Cartographie interactive du portefeuille"
             largeTitle
-            desc="Une application web réservée au mandant. Chaque actif y est localisé, photographié et décrit : rendement, taux de capitalisation, écart entre valeur au bilan et valeur de marché, alertes. Mise à jour pendant la mission, consultable ensuite."
-            tools={["Application web", "Accès réservé", "Mise à jour en cours de mission"]}
+            desc="Une page autonome remise au mandant. Chaque actif y est localisé et décrit : rendement, taux de capitalisation, écart entre valeur au bilan et valeur de marché, alertes. Fiches d'actif datées, mises à jour à chaque point d'étape."
+            tools={["Page autonome", "Aucune donnée hébergée", "Fiches datées"]}
             visual={<MapDashboardSvg />}
             delay={0.05}
           />
@@ -49,8 +49,8 @@ export function Livrables() {
             tag="Modélisation"
             title="Modèle financier ouvert"
             largeTitle
-            desc="Le modèle Excel ou Google Sheets est remis avec l'ensemble des hypothèses paramétrables. Le mandant teste ses propres scénarios, ses propres taux et ses propres horizons."
-            tools={["Excel", "Google Sheets", "Hypothèses ouvertes"]}
+            desc="Le classeur Excel est remis avec l'ensemble des hypothèses paramétrables, isolées des calculs, sans cellule verrouillée. Le mandant teste ses propres scénarios, ses propres taux et ses propres horizons."
+            tools={["Excel", "Aucune cellule verrouillée", "Hypothèses isolées"]}
             visual={<SpreadsheetSvg />}
             delay={0.1}
           />
@@ -59,8 +59,8 @@ export function Livrables() {
             colSpan={4}
             tag="Note de décision"
             title="Deux formats, un seul raisonnement"
-            desc="Une synthèse de 4 pages pour le comité, une note détaillée de 30 à 40 pages en appui."
-            tools={["4p · synthèse", "30p · détaillée"]}
+            desc="Une note de décision en quatre sections, cinq à sept pages selon le dossier, et un dossier d'analyse dont la longueur suit le nombre d'actifs."
+            tools={["4 sections", "5 à 7 p.", "Dossier d'analyse"]}
             visual={<TwoFormatsSvg />}
             delay={0.15}
           />
@@ -79,8 +79,8 @@ export function Livrables() {
             colSpan={4}
             tag="Suivi"
             title="Tableau de bord partagé"
-            desc="Pour les missions longues, un tableau de bord partagé avec le mandant qui montre l'avancement de chaque chantier."
-            tools={["Web app", "Notifications"]}
+            desc="Pour les missions longues, un tableau de bord partagé avec le mandant qui montre l'avancement de chaque chantier. Journal daté, avec l'ancienneté de la dernière mise à jour."
+            tools={["Page autonome", "Journal daté"]}
             visual={<LiveTrackerSvg />}
             delay={0.25}
           />
@@ -257,8 +257,7 @@ function LiveTrackerSvg() {
   return (
     <svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" className="block h-full w-auto">
       <rect x="0.5" y="0.5" width="99" height="55" rx="2" fill="none" stroke="rgba(15,26,46,0.2)" strokeWidth="1" />
-      <circle cx="14" cy="14" r="3" fill="#4ade80" />
-      <circle cx="14" cy="14" r="6" fill="none" stroke="#4ade80" strokeWidth="0.5" opacity="0.4" />
+      <circle cx="14" cy="14" r="3" fill="#1D3A8F" />
       <rect x="24" y="11" width="34" height="3" fill="rgba(15,26,46,0.25)" />
       <rect x="24" y="17" width="22" height="2" fill="rgba(15,26,46,0.12)" />
       <line x1="6" y1="28" x2="94" y2="28" stroke="rgba(15,26,46,0.15)" strokeWidth="0.5" />

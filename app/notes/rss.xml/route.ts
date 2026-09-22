@@ -12,10 +12,11 @@ function escapeXml(value: string) {
     .replace(/'/g, "&apos;");
 }
 
-export const dynamic = "force-static";
+/** Régénéré toutes les heures, comme les pages de notes. */
+export const revalidate = 3600; // doit rester aligné sur REVALIDATE_SECONDS dans lib/notion.ts
 
-export function GET() {
-  const notes = getNotes();
+export async function GET() {
+  const notes = await getNotes();
   const updated = notes[0]
     ? new Date(`${notes[0].date}T12:00:00Z`).toUTCString()
     : new Date().toUTCString();

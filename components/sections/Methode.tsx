@@ -18,13 +18,13 @@ const PHASES = [
     title: "Analyse",
     duration: "2 à 4 semaines",
     desc: "Collecte, modélisation, comparables, visites de terrain.",
-    deliverable: "Livrable : modèle financier et dossier d'analyse.",
+    deliverable: "Livrable : cartographie du portefeuille, modèle financier, dossier d'analyse.",
   },
   {
     num: "03",
     title: "Recommandation",
     duration: "1 semaine",
-    desc: "Options hiérarchisées, trade-offs explicités, orientation argumentée et défendable.",
+    desc: "Options hiérarchisées, arbitrage écrit, et les conditions qui feraient tomber la recommandation.",
     deliverable: "Livrable : note de décision pour la gouvernance.",
   },
   {

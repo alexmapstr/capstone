@@ -12,8 +12,11 @@ export const metadata: Metadata = {
 
 const BASE = "https://capstone-strategies.fr";
 
-export default function NotesIndex() {
-  const notes = getNotes();
+/** Les notes viennent de Notion : la page est régénérée toutes les heures. */
+export const revalidate = 3600; // doit rester aligné sur REVALIDATE_SECONDS dans lib/notion.ts
+
+export default async function NotesIndex() {
+  const notes = await getNotes();
 
   const jsonLd = {
     "@context": "https://schema.org",
